@@ -1,6 +1,6 @@
-package com.sv.restapi.lab1;
+package com.sv.restapi.lab1.controller;
 
-import com.sv.entity.Contact;
+import com.sv.restapi.lab1.entity.Contact;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
