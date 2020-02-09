@@ -1,4 +1,4 @@
-package com.sv.entity;
+package com.sv.restapi.lab1.entity;
 
 public class Contact {
     private String id;
