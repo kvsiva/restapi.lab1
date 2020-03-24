@@ -40,4 +40,10 @@ public class AddressBookController {
     void deleteContact(@PathVariable String id) {
          contacts.remove(id);
     }
+
+    @PutMapping("/{id}")
+    Contact updateContact(@RequestBody Contact newcontact,@PathVariable String id) {
+         contacts.put(id,newcontact);
+         return newcontact;
+    }
 }
