@@ -35,4 +35,9 @@ public class AddressBookController {
          return contact;
 
      }
+
+    @DeleteMapping("/{id}")
+    void deleteContact(@PathVariable String id) {
+         contacts.remove(id);
+    }
 }
