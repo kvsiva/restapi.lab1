@@ -44,12 +44,12 @@ public class PatientController {
     }
 
     @PostMapping("/hospital/{username}/patients")
-    public ResponseEntity<Void> createPatient(@PathVariable String username, @RequestBody Patient course) {
-        Patient createdCourse = patientHardcodedService.save(course);
+    public ResponseEntity<Void> createPatient(@PathVariable String username, @RequestBody Patient patient) {
+        Patient createdPatient = patientHardcodedService.save(patient);
         // Location
         // Get current resource url
         /// {id}
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createdCourse.getId())
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createdPatient.getId())
                 .toUri();
         return ResponseEntity.created(uri).build();
     }
