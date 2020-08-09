@@ -27,20 +27,20 @@ public class PatientHardcodedService {
 //    }
 
     public Patient findById(long id) {
-        for (Patient course: patients) {
-            if (course.getId() == id) {
-                return course;
+        for (Patient patient: patients) {
+            if (patient.getId() == id) {
+                return patient;
             }
         }
         return null;
     }
 
     public Patient deleteById(Long id) {
-        Patient course = findById(id);
-        if (course == null)
+        Patient patient = findById(id);
+        if (patient == null)
             return null;
-        if (patients.remove(course)) {
-            return course;
+        if (patients.remove(patient)) {
+            return patient;
         }
         return null;
     }
