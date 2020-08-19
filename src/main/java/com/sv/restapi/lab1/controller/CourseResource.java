@@ -2,6 +2,7 @@ package com.sv.restapi.lab1.controller;
 
 import com.sv.restapi.lab1.entity.Course;
 import com.sv.restapi.lab1.service.CoursesHardcodedService;
+import com.sv.restapi.lab1.service.CoursesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,8 @@ import java.util.List;
 public class CourseResource {
 
     @Autowired
-    private CoursesHardcodedService courseManagementService;
+    //private CoursesHardcodedService courseManagementService;
+    private CoursesService courseManagementService;
     @GetMapping("/instructors/{username}/courses")
     public List<Course> getAllCourses(@PathVariable String username) {
         return courseManagementService.findAll();

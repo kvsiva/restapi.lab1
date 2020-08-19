@@ -7,6 +7,9 @@ public class Course {
     private String username;
     private String description;
 
+    public Course() {
+    }
+
     public Course(Long id, String username, String description) {
         this.id = id;
         this.username = username;
