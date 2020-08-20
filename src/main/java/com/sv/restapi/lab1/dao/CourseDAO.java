@@ -9,7 +9,7 @@ import java.util.List;
 @Component
 public class CourseDAO {
     private static final String SQL_INSERT = "INSERT INTO course (username, description) VALUES (?,?)";
-    private static final String SQL_SELECT = "SELECT * FROM course";
+    private static final String SQL_SELECT = "SELECT * FROM course where username=?";
     //private static List<Course> courses = new ArrayList<>();
     private List<Course> courses=null;
     private CourseDAO() {
@@ -19,7 +19,7 @@ public class CourseDAO {
         {
 
             try (Connection conn = DriverManager.getConnection(
-                    "jdbc:postgresql://172.17.0.2:5432/postgres", "postgres", "tiger");
+                    "jdbc:postgresql://localhost:5432/postgres", "postgres", "tiger");
                  PreparedStatement preparedStatement = conn.prepareStatement(SQL_INSERT)) {
 
                 preparedStatement.setString(1, course.getUsername());
@@ -40,12 +40,12 @@ public class CourseDAO {
 
     }
 
-    public List<Course> getCourses(){
+    public List<Course> getCourses(String uname){
         courses = new ArrayList<>();
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:postgresql://172.17.0.2:5432/postgres", "postgres", "tiger");
+                "jdbc:postgresql://localhost:5432/postgres", "postgres", "tiger");
              PreparedStatement preparedStatement = conn.prepareStatement(SQL_SELECT)) {
-
+             preparedStatement.setString(1, uname);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {

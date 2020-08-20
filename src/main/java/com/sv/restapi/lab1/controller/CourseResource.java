@@ -20,7 +20,7 @@ public class CourseResource {
     private CoursesService courseManagementService;
     @GetMapping("/instructors/{username}/courses")
     public List<Course> getAllCourses(@PathVariable String username) {
-        return courseManagementService.findAll();
+        return courseManagementService.findAll(username);
     }
 
     @DeleteMapping("/instructors/{username}/courses/{id}")

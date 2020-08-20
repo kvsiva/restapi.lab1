@@ -10,7 +10,7 @@ public class AddCourse {
     public static void main(String[] args) {
 
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:postgresql://172.17.0.2:5432/postgres", "postgres", "tiger");
+                "jdbc:postgresql://localhost:5432/postgres", "postgres", "tiger");
              PreparedStatement preparedStatement = conn.prepareStatement(SQL_INSERT)) {
 
             preparedStatement.setString(1, "sv");

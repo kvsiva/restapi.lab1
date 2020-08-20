@@ -19,8 +19,8 @@ public class CoursesService {
         return course;
     }
 
-    public List<Course> findAll() {
-        return courseDAO.getCourses();
+    public List<Course> findAll(String username) {
+        return courseDAO.getCourses(username);
     }
 
     public Course deleteById(long id) {
