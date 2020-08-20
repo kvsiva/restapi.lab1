@@ -1,6 +1,9 @@
 package com.sv.restapi.lab1.entity;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class Contact {
+    @ApiModelProperty(notes="The unique id of the contact")
     private String id;
 
     public Contact() {
@@ -12,9 +15,11 @@ public class Contact {
         this.address = address;
         this.mobileNumber = mobileNumber;
     }
-
+    @ApiModelProperty(notes="The persons name")
     private String name;
+    @ApiModelProperty(notes="The persons address")
     private String address;
+    @ApiModelProperty(notes="The persons mobile number")
     private int mobileNumber;
 
     public String getId() {
