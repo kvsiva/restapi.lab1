@@ -60,7 +60,7 @@ public class CourseDAO {
                 obj.setUsername(username);
                 obj.setDescription(description);
                 courses.add(obj);
-                System.out.println(obj);
+                //System.out.println(obj);
             }
 
         } catch (SQLException e) {
